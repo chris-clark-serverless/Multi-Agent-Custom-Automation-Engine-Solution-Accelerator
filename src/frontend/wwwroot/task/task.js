@@ -65,6 +65,9 @@
     let agentIcon = "";
 
     switch (agentName) {
+      case "Email_Support_Agent":
+        agentIcon = "tech_agent";
+        break;
       case "Marketing_Agent":
         agentIcon = "unknown";
         break;

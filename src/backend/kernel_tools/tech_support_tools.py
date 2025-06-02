@@ -5,24 +5,10 @@ import json
 from semantic_kernel.functions import kernel_function
 from models.messages_kernel import AgentType
 
-
 class TechSupportTools:
     # Define Tech Support tools (functions)
     formatting_instructions = "Instructions: returning the output of this function call verbatim to the user in markdown. Then write AGENT SUMMARY: and then include a summary of what you did."
     agent_name = AgentType.TECH_SUPPORT.value
-
-    @staticmethod
-    @kernel_function(
-        description="Send a welcome email to a new employee as part of onboarding."
-    )
-    async def send_welcome_email(employee_name: str, email_address: str) -> str:
-        return (
-            f"##### Welcome Email Sent\n"
-            f"**Employee Name:** {employee_name}\n"
-            f"**Email Address:** {email_address}\n\n"
-            f"A welcome email has been successfully sent to {employee_name} at {email_address}.\n"
-            f"{TechSupportTools.formatting_instructions}"
-        )
 
     @staticmethod
     @kernel_function(description="Set up an Office 365 account for an employee.")

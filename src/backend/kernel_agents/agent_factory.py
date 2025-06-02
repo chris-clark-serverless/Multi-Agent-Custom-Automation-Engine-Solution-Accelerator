@@ -20,6 +20,7 @@ from kernel_agents.planner_agent import PlannerAgent  # Add PlannerAgent import
 from kernel_agents.procurement_agent import ProcurementAgent
 from kernel_agents.product_agent import ProductAgent
 from kernel_agents.tech_support_agent import TechSupportAgent
+from kernel_agents.email_support_agent import EmailSupportAgent
 from models.messages_kernel import AgentType, PlannerResponsePlan
 # pylint:disable=E0611
 from semantic_kernel.agents.azure_ai.azure_ai_agent import AzureAIAgent
@@ -37,6 +38,7 @@ class AgentFactory:
         AgentType.PRODUCT: ProductAgent,
         AgentType.PROCUREMENT: ProcurementAgent,
         AgentType.TECH_SUPPORT: TechSupportAgent,
+        AgentType.EMAIL_SUPPORT: EmailSupportAgent,
         AgentType.GENERIC: GenericAgent,
         AgentType.HUMAN: HumanAgent,
         AgentType.PLANNER: PlannerAgent,
@@ -50,6 +52,7 @@ class AgentFactory:
         AgentType.PRODUCT: AgentType.PRODUCT.value,
         AgentType.PROCUREMENT: AgentType.PROCUREMENT.value,
         AgentType.TECH_SUPPORT: AgentType.TECH_SUPPORT.value,
+        AgentType.EMAIL_SUPPORT: AgentType.EMAIL_SUPPORT.value,
         AgentType.GENERIC: AgentType.GENERIC.value,
         AgentType.HUMAN: AgentType.HUMAN.value,
         AgentType.PLANNER: AgentType.PLANNER.value,
@@ -63,6 +66,7 @@ class AgentFactory:
         AgentType.PRODUCT: ProductAgent.default_system_message(),
         AgentType.PROCUREMENT: ProcurementAgent.default_system_message(),
         AgentType.TECH_SUPPORT: TechSupportAgent.default_system_message(),
+        AgentType.EMAIL_SUPPORT: EmailSupportAgent.default_system_message(),
         AgentType.GENERIC: GenericAgent.default_system_message(),
         AgentType.HUMAN: HumanAgent.default_system_message(),
         AgentType.PLANNER: PlannerAgent.default_system_message(),
